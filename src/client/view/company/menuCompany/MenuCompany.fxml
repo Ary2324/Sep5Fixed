@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="74.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.company.menuCompany.MenuCompanyController">
+   <children>
+      <Button fx:id="overviewBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onOverviewBtn" prefHeight="50.0" prefWidth="50.0" text="Profile Overview" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Button fx:id="editProfileBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onEditProfileBtn" prefHeight="50.0" prefWidth="50.0" text="Edit Profile" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="jobAdsBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onJobAdsBtn" prefHeight="50.0" prefWidth="50.0" text="Add job" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="applicantsBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onApplicantsBtn" prefHeight="50.0" prefWidth="50.0" text="Applicants" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="chatBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onChatBtn" prefHeight="50.0" prefWidth="50.0" text="Chat" />
+      <Button fx:id="logoutBtn" layoutX="20.0" layoutY="200.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onLogoutBtn" prefHeight="50.0" prefWidth="50.0" text="Logout" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

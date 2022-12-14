@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="client.view.applicant.menu.MenuController">
+   <children>
+      <Button fx:id="overviewBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onOverviewBtn" prefHeight="50.0" prefWidth="50.0" text="Profile Overview" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Button fx:id="editProfileBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onEditProfileBtn" prefHeight="50.0" prefWidth="50.0" text="Edit Profile" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="jobSearchBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onJobSearchBtn" prefHeight="50.0" prefWidth="50.0" text="Job Search" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="chatBtn" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onChatBtn" prefHeight="50.0" prefWidth="50.0" text="Chat" />
+      <Button fx:id="logoutBtn" layoutX="20.0" layoutY="200.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#onLogoutBtn" prefHeight="50.0" prefWidth="50.0" text="Logout" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

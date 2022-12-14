@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="405.0" spacing="5.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.applicant.user.ProfileController">
+   <children>
+      <HBox>
+         <children>
+            <Circle fx:id="profilePicture" fill="#70a0cc" radius="34.0" stroke="BLACK" strokeType="INSIDE" />
+            <VBox prefWidth="277.0" spacing="5.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label fx:id="applicantName" prefHeight="34.0" prefWidth="249.0" text="Full Name">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subtitle" text="bio" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+      <Label text="Personal Information">
+         <VBox.margin>
+            <Insets left="5.0" />
+         </VBox.margin></Label>
+      <Label fx:id="personalInformation" prefWidth="385.0" style="-fx-border-color: #000000;" text="We use cookies to personalize and improve your experience on our website as described in our Cookie Consent. You accept all cookies on our website page by clicking &quot;Accept All&quot; or reject non-essential cookies by clicking &quot;Reject All&quot;. If you reject all or some non-essential cookies, this may affect your experience on our website and affect our ability to provide certain services, features or offers. You may no longer see ads that interest you. For more information about our data practices, please visit our" textAlignment="JUSTIFY" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="qualitiesLabel" text="Skills">
+         <VBox.margin>
+            <Insets left="5.0" />
+         </VBox.margin>
+      </Label>
+      <ListView fx:id="qualitiesListView" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
