@@ -51,8 +51,8 @@ public class SelectApplicantsViewModel implements ViewModel {
 
     }
     public void onOpenChatBtn(ViewHandler vh){
-        for(int i = 0; i<clientModel.getUser().getConvs().size(); i++){
-            if(clientModel.getUser().getConvs().get(i).containsUser(applicant)){
+        for(int i = 0; i<clientModel.getAllConversations().size(); i++){
+            if(clientModel.getAllConversations().get(i).containsUser(applicant)){
                 vh.openChatView(applicant);
                 return;
             }

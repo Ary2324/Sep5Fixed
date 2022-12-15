@@ -207,11 +207,13 @@ public class UserModel implements IUserModel {
         return null;
     }
 
-    public ArrayList<String> getAllConversationBuddies(){
-        ArrayList<String> result = new ArrayList<>();
+    public ArrayList<Conversation> getAllClientConversation(){
+        ArrayList<Conversation> result = new ArrayList<>();
         ArrayList<Conversation> conversations = getAllConversations();
         for(int i = 0; i < conversations.size(); i++){
-            result.add(conversations.get(i).getOtherUser(clientUser).getUsername());
+            if(conversations.get(i).containsUser(clientUser)){
+                result.add(conversations.get(i));
+            }
         }
         return result;
 
@@ -221,10 +223,8 @@ public class UserModel implements IUserModel {
     public void createNewConversation(User user, JobAd ad) {
         try {
             Conversation newConv = server.createConversation(user, ad);
-            clientUser.getConvs().add(newConv);
-            updateUser();//update company
-            user.getConvs().add(newConv);
-            server.updateUser(user); //update applicant
+
+
         } catch (RemoteException e) {
             log.quickClientLog("UserModel::NewConversation::RemoteException");
         }

@@ -12,6 +12,7 @@ public class OverviewViewModel implements ViewModel {
     private IUserModel clientModel;
 
     private StringProperty titleLabelProperty;
+
     public OverviewViewModel(IUserModel model){
         clientModel = model;
         clientModel.attachObserver(this);

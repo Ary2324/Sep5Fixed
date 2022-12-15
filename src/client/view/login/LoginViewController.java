@@ -21,7 +21,6 @@ public class LoginViewController implements FXMLController {
     private Popup popup = new Popup();
     private ViewHandler viewHandler;
     private LoginViewModel logInVM;
-    private MenuController menuControl;
     @FXML
     TextField loginTextField;
     @FXML

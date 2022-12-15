@@ -63,13 +63,6 @@ public class ServerModel {
     }
     public User getUser(String username) throws UserNotFoundException {
         User user = database.getUser(username);
-        ArrayList<Conversation> result = new ArrayList<>();
-        for(Conversation conversation: conversation){
-            if(conversation.containsUser(user)){
-                result.add(conversation);
-            }
-        }
-        user.setConvs(result);
         return user;
     }
 
@@ -155,6 +148,7 @@ public class ServerModel {
         for(Conversation conversation : conversation){
             if(conversation.getId() == nextConv.getId()){
                 conversation.update(nextConv);
+                System.out.println(conversation.getAllMessages().toString());
             }
         }
     }
