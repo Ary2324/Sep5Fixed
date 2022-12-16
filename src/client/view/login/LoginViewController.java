@@ -91,6 +91,6 @@ public class LoginViewController implements FXMLController {
 
 
         }
-    };
+    }
 
 }

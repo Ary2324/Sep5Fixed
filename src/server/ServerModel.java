@@ -152,16 +152,4 @@ public class ServerModel {
             }
         }
     }
-//    public Conversation getConversation(User user, JobAd add){
-//        for(Conversation conversation : conversation){
-//            if(conversation.getId() == nextConv.getId()){
-//                conversation.update(nextConv);
-//            }
-//        }
-//    }
-
-
-
-
-
 }

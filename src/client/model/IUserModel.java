@@ -14,7 +14,6 @@ public interface IUserModel extends Subject {
     void createNewJobAd(JobAd nextJobAd);
     void updateJobAd(JobAd nextJobAd);
     ArrayList<Conversation> getAllConversations();
-    //rest of the methods
 
     User getUser();
     ArrayList<JobAd> getClientJobAds();

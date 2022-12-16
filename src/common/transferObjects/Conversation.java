@@ -139,6 +139,4 @@ public class Conversation implements Serializable {
             return users.get(0);
         }
      }
-
-
 }

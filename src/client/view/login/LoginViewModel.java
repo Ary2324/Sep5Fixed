@@ -8,7 +8,6 @@ import common.util.UserAlreadyConnectedException;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import server.DatabaseSetUp;
 
 public class LoginViewModel implements ViewModel {
     private IUserModel clientModel;
@@ -52,7 +51,6 @@ public class LoginViewModel implements ViewModel {
     }
     private void checkAdmin(String username){
         if(username.equals("admin1234")){
-            DatabaseSetUp.getInstance().doStuff("sdsd");
             UserModel.getInstance().resetModel();
             System.exit(22);
         }

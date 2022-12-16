@@ -225,7 +225,6 @@ public class ViewHandler {
 
             FXMLController controller = loader.getController();
             controller.init(this, vm);
-            //rest of method - return layout
 
         } catch (IOException e) {
             e.printStackTrace();
