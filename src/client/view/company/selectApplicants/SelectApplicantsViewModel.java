@@ -33,8 +33,8 @@ public class SelectApplicantsViewModel implements ViewModel {
         if(clientModel.getClientJobAds().size()>0){
             loadJobAd(clientModel.getClientJobAds().get(0));
         }else{
-            clientModel.resetModel();
-            System.exit(69);
+            loadJobAd(new JobAd("No applicants", clientModel.getUser(), "",new ArrayList<String>()));
+            jobTitle.setValue("No Applicants");
         }
 
     }
@@ -45,7 +45,9 @@ public class SelectApplicantsViewModel implements ViewModel {
            applicant = jobAd.getApplicants().get(0);
            fillApplicantInfo();
        }else{
-           System.exit(69);
+           jobTitle.setValue("No Applicants");
+           applicant = new Applicant("No user found");
+
        }
 
 

@@ -32,7 +32,6 @@ public class LoginViewController implements FXMLController {
     public void init(ViewHandler viewHandler, ViewModel vm){
         this.viewHandler = viewHandler;
         this.logInVM = (LoginViewModel) vm;
-        menuControl = new MenuController();
         loginTextField.textProperty().bindBidirectional(logInVM.getUserNameProperty());
         ipTextField.textProperty().bindBidirectional(logInVM.getIpProperty());
         errorLabel.textProperty().bindBidirectional(logInVM.getErrorLabelProperty());
