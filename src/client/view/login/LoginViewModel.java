@@ -14,7 +14,7 @@ public class LoginViewModel implements ViewModel {
     private IUserModel clientModel;
 
     private StringProperty userNameProperty = new SimpleStringProperty("");
-    private StringProperty ipProperty = new SimpleStringProperty("10.154.222.81");
+    private StringProperty ipProperty = new SimpleStringProperty("10.154.220.82");
     private StringProperty errorLabelProperty = new SimpleStringProperty("");
 
 

@@ -72,7 +72,22 @@ public class Conversation implements Serializable {
             return users.get(1).getUsername().equals(user.getUsername());
         }
     }
-    public boolean containsUser(String fullName){
+
+    public boolean containsUser(String fullName) {
+        if (users.get(0).getFullName().equals(fullName)) {
+            System.out.println("1 user fname equal");
+            return true;
+        } else if (users.get(1).getFullName().equals(fullName)) {
+            System.out.println("2 user fname equal");
+            return true;
+        } else if (users.get(0).getUsername().equals(fullName)) {
+            System.out.println("1 username the same");
+            return true;
+        } else {
+            return users.get(1).getUsername().equals(fullName);
+        }
+    }
+    public boolean containsUsers(String fullName, String fullName2){
         if(users == null) {
             System.out.println("1");
             return false;
@@ -82,12 +97,16 @@ public class Conversation implements Serializable {
             return false;
         }
         if(users.get(0).getFullName().equals(fullName)){
-            System.out.println("3");
-            return true;
-        }else{
-            System.out.println("4");
-            return users.get(1).getUsername().equals(fullName);
+            if(containsUser(fullName2)){
+                return true;
+            }
+        }else if(users.get(1).getFullName().equals(fullName)) {
+            if (containsUser(fullName2)) {
+                return true;
+            }
         }
+        return false;
+
     }
 
     public String getMessagesForDB() {

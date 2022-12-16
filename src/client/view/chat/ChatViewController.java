@@ -31,6 +31,7 @@ public class ChatViewController implements FXMLController{
         this.viewHandler = viewHandler;
         this.chatVM = (ChatViewModel) vm;
         inputTextField.textProperty().bindBidirectional(chatVM.getMessageInputProperty());
+        accountNameLabel.textProperty().bindBidirectional(chatVM.getTopLabelProperty());
         accountListView.setItems(chatVM.getAccountsList());
         messagesListView.setItems(chatVM.getMessagesList());
         
@@ -58,10 +59,9 @@ public class ChatViewController implements FXMLController{
         if(event.getTarget() instanceof Text) {
             String target = event.getTarget().toString();
             String[] newTarget = target.split("\"");
+            System.out.println("ChatViewController::onListMousePress::" + newTarget[1]);
             chatVM.openConversation(newTarget[1]);
 
-            System.out.println("ChatViewController::onListMousePress::" + newTarget[1]);
-            
         }
     }
 }

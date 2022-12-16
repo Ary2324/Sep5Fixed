@@ -83,8 +83,8 @@ public class ViewHandler {
 
 
     public void openApplicantOverview() {
-            BorderPane root = (BorderPane)createFromFXML(vmf.getOverviewVM(),"../view/applicant/overview/Overview.fxml");
-
+            BorderPane root = (BorderPane)createFromFXML(vmf.getOverviewVM(),
+                    "../view/applicant/overview/Overview.fxml");
             root.setLeft(getApplicantMenuBar());
 
             mainScene = new Scene(root,800, 600);
@@ -225,7 +225,7 @@ public class ViewHandler {
 
             FXMLController controller = loader.getController();
             controller.init(this, vm);
-
+            //rest of method - return layout
 
         } catch (IOException e) {
             e.printStackTrace();

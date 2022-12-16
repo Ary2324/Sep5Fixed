@@ -74,7 +74,7 @@ public class JDBCConnector implements IJDBCConnector{
     private void insertNewCompany(Company company) {
         String SQL = "INSERT INTO sep5.company VALUES "
                 + "('" + company.getUsername() + "', '" + company.getFullName() + "', '"
-                + company.getDetails() + "', " + company.getConvsIdForDB() +");";
+                + company.getDetails() + ");";
 
         try {
             Statement statement = connection.createStatement();
@@ -89,7 +89,7 @@ public class JDBCConnector implements IJDBCConnector{
     private void insertNewApplicant(Applicant applicant) {
         String SQL = "INSERT INTO sep5.applicant VALUES "
                 + "('" + applicant.getUsername() + "', '" + applicant.getFullName() + "', '" + applicant.getSubtitle()  + "', '"
-                + applicant.getDetails() + "', " + applicant.getQualitiesForDB() + ", " + applicant.getConvsIdForDB() +");";
+                + applicant.getDetails() + "', " + applicant.getQualitiesForDB() + ");";
         try {
             Statement statement = connection.createStatement();
             statement.executeQuery(SQL);
@@ -146,8 +146,8 @@ public class JDBCConnector implements IJDBCConnector{
         String SQL = "UPDATE sep5.Applicant SET fullName = '" + user.getFullName() + "'," +
                 " subtitle = '" + user.getSubtitle() + "'," +
                 "personalinfromation = '" + user.getDetails() + "'," +
-                "skills = " + user.getQualitiesForDB() + "," +
-                "conversationsIds = " + user.getConvsIdForDB() + " WHERE username = '" + user.getUsername() + "';";
+                "skills = " + user.getQualitiesForDB() + " " +
+                " WHERE username = '" + user.getUsername() + "';";
         try {
             Statement statement = connection.createStatement();
             statement.executeQuery(SQL);
@@ -159,8 +159,8 @@ public class JDBCConnector implements IJDBCConnector{
 
     private void updateCompany(User user) {
         String SQL = "UPDATE sep5.Company SET companyName = '" + user.getFullName() + "'," +
-                "description = '" + user.getDetails() + "'," +
-                "conversationsIds = " + user.getConvsIdForDB() + " WHERE username = '" + user.getUsername() + "';";
+                "description = '" + user.getDetails() + "' " +
+                " WHERE username = '" + user.getUsername() + "';";
         try {
             Statement statement = connection.createStatement();
             statement.executeQuery(SQL);

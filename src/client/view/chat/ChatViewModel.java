@@ -18,6 +18,7 @@ public class ChatViewModel implements ViewModel {
     private IUserModel clientModel;
 
     private StringProperty messageInputProperty = new SimpleStringProperty("");
+    private StringProperty topLabelProperty = new SimpleStringProperty("");
     private Conversation currentConversation;
     private ObservableList<String> messageList;
     private ObservableList<String> accountList;
@@ -27,11 +28,13 @@ public class ChatViewModel implements ViewModel {
     public ChatViewModel(IUserModel model){
         clientModel = model;
         clientModel.attachObserver(this);
+        topLabelProperty.setValue("Chat with ");
         messageList = FXCollections.observableArrayList();
         accountList = FXCollections.observableArrayList();
-        if(clientModel.getAllConversationBuddies().size()>0){
-            openConversation(clientModel.getAllConversationBuddies().get(0));
+        if(clientModel.getAllClientConversation().size()>0){
+            currentConversation = clientModel.getAllClientConversation().get(0);
             updateAccountList();
+
         }
 
         
@@ -40,6 +43,7 @@ public class ChatViewModel implements ViewModel {
     public StringProperty getMessageInputProperty(){
         return messageInputProperty;
     }
+    public StringProperty getTopLabelProperty(){return topLabelProperty;}
     public ObservableList<String> getMessagesList(){
         return messageList;
     }
@@ -48,21 +52,23 @@ public class ChatViewModel implements ViewModel {
     }
     
     public void openConversation(User user){
-        ArrayList<Conversation> conversations = clientModel.getUser().getConvs();
+        ArrayList<Conversation> conversations = clientModel.getAllConversations();
         for(int i = 0; i < conversations.size(); i++){
             if(conversations.get(i).containsUser(user)){
                 currentConversation = conversations.get(i);
                 update();
+                topLabelProperty.setValue("Chat with " + currentConversation.getOtherUser(clientModel.getUser()).getFullName());
                 break;
             }
         }
     }
-    public void openConversation(String fullName){
-        ArrayList<Conversation> conversations = clientModel.getUser().getConvs();
+    public void openConversation(String username){
+        ArrayList<Conversation> conversations = clientModel.getAllConversations();
         for(int i = 0; i < conversations.size(); i++){
-            if(conversations.get(i).containsUser(fullName)){
+            if(conversations.get(i).containsUser(username)){
                 currentConversation = conversations.get(i);
-                update();
+                updateMessageList();
+                topLabelProperty.setValue("Chat with " + currentConversation.getOtherUser(clientModel.getUser()).getFullName());
                 break;
             }
         }
@@ -88,8 +94,8 @@ public class ChatViewModel implements ViewModel {
     }
     public void updateAccountList(){
         accountList.clear();
-        for(int i = 0; i < clientModel.getAllConversationBuddies().size();i++){
-            accountList.add(clientModel.getAllConversationBuddies().get(i));
+        for(int i = 0; i < clientModel.getAllClientConversation().size();i++){
+            accountList.add(clientModel.getAllClientConversation().get(i).getOtherUser(clientModel.getUser()).getFullName());
         }
     }
     @Override

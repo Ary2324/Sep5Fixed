@@ -33,8 +33,8 @@ public class SelectApplicantsViewModel implements ViewModel {
         if(clientModel.getClientJobAds().size()>0){
             loadJobAd(clientModel.getClientJobAds().get(0));
         }else{
-            clientModel.resetModel();
-            System.exit(69);
+            loadJobAd(new JobAd("No applicants", clientModel.getUser(), "",new ArrayList<String>()));
+            jobTitle.setValue("No Applicants");
         }
 
     }
@@ -45,14 +45,16 @@ public class SelectApplicantsViewModel implements ViewModel {
            applicant = jobAd.getApplicants().get(0);
            fillApplicantInfo();
        }else{
-           System.exit(69);
+           jobTitle.setValue("No Applicants");
+           applicant = new Applicant("No user found");
+
        }
 
 
     }
     public void onOpenChatBtn(ViewHandler vh){
-        for(int i = 0; i<clientModel.getUser().getConvs().size(); i++){
-            if(clientModel.getUser().getConvs().get(i).containsUser(applicant)){
+        for(int i = 0; i<clientModel.getAllConversations().size(); i++){
+            if(clientModel.getAllConversations().get(i).containsUser(applicant)){
                 vh.openChatView(applicant);
                 return;
             }

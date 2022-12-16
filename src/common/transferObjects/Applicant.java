@@ -11,7 +11,6 @@ public class Applicant implements User, Serializable {
     private String subtitle = "";
     private String personalInformation = "";
     private ArrayList<String> qualities = new ArrayList<>();
-    private ArrayList<Conversation> conversations = new ArrayList<>();
 
 
 
@@ -94,36 +93,4 @@ public class Applicant implements User, Serializable {
         setSubtitle(newUser.getSubtitle());
         setQualities(newUser.getQualities());
     }
-
-    @Override
-    public void setConvs(ArrayList<Conversation> convs) {
-        System.out.println("Applicant setCOnv");
-        conversations = convs;
-    }
-
-    @Override
-    public ArrayList<Conversation> getConvs() {
-        System.out.println("Applicant::getCOnv::" + conversations.toString());
-        return conversations;
-    }
-
-    @Override
-    public String getConvsIdForDB() {
-        String result = "ARRAY [";
-        if(conversations.size() == 0){
-            return "NULL";
-        }else{
-            for(int i = 0; i<conversations.size(); i++){
-                result +=  conversations.get(i).getId() ;
-                if(i+1 < conversations.size()){
-                    result += ", ";
-                }
-            }
-            result += "]";
-            return result;
-        }
-
-    }
-
-
 }

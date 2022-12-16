@@ -28,10 +28,6 @@ public class JobAd implements Serializable {
         return jobId;
     }
 
-    public void setJobId(int jobId) {
-        this.jobId = jobId;
-    }
-
     public JobAd(int id, String jobTitle, User company, String jobDescription, ArrayList<String> requirements, ArrayList<Applicant> applicants) {
         jobId = id;
         this.jobTitle = jobTitle;
@@ -51,10 +47,6 @@ public class JobAd implements Serializable {
 
     public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
-    }
-
-    public void setApplicants(ArrayList<Applicant> applicants) {
-        this.applicants = applicants;
     }
 
     public void setRequirements(ArrayList<String> requirements) {
@@ -122,7 +114,6 @@ public class JobAd implements Serializable {
         }
     }
     public boolean alreadyApplied(Applicant newApplicant){
-        boolean alreadyApplied = false;
         for(int i = 0; i < applicants.size(); i++){
             if(applicants.get(i).getUsername().equals(newApplicant.getUsername())){
                 return true;

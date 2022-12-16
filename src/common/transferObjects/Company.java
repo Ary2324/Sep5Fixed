@@ -8,7 +8,6 @@ public class Company implements User, Serializable {
     private String username;
     private String companyName;
     private String description;
-    private ArrayList<Conversation> conversations = new ArrayList<>();
 
     public Company(String username) {
         this.username = username;
@@ -73,34 +72,6 @@ public class Company implements User, Serializable {
         setFullName(newUser.getFullName());
         setDetails(newUser.getDetails());
         setSubtitle(newUser.getSubtitle());
-        setConvs(newUser.getConvs());
     }
 
-    @Override
-    public void setConvs(ArrayList<Conversation> convs) {
-        conversations = convs;
-    }
-
-    @Override
-    public ArrayList<Conversation> getConvs() {
-        return conversations;
-    }
-
-    @Override
-    public String getConvsIdForDB() {
-        String result = "ARRAY [";
-        if(conversations.size() == 0){
-            return "NULL";
-        }else{
-            for(int i = 0; i<conversations.size(); i++){
-                result += + conversations.get(i).getId();
-                if(i+1 < conversations.size()){
-                    result += ", ";
-                }
-            }
-            result += "]";
-            return result;
-        }
-
-    }
 }
